@@ -1,0 +1,19 @@
+
+
+<div class="jumbotron">
+  <h1 class="display-4"><%= @project.title %></h1>
+  <p class="lead"><%= @project.description %></p>
+  <p class="lead">User ID: <%= @project.user_id %></p>
+  
+  <%= link_to "Edit project", edit_project_path(@project), class:"btn btn-secondary" %> | <%= link_to "Back to projects", projects_path , class:"btn btn-dark" %> | 
+   <%= link_to "Destroy", @project, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:"btn btn-danger" %>
+  <%# <%= link_to 'Delete', project_path(@project), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%# <%= link_to "Destroy project", @project, method: :delete, class:"btn btn-danger" %>
+  
+</div>
+
+
+
+<div>
+  
+</div>
