@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
     #pundishing_user can be any name you like
   def pundishing_user
-    flash[:notice] = "You are not authorized to perform this action."
+    flash[:notice] = "Access Denied."
     redirect_to root_path
   end
 end
