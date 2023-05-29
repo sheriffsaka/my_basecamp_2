@@ -16,25 +16,25 @@ class UsersController < ApplicationController
         user = User.find(params[:id])
         authorize user
         user.destroy
-        redirect_to user_path, :notice => "User Deleted"
+        redirect_to users_path, :notice => "User Deleted"
     end
 
     def update
         @user = User.find(params[:id])
         authorize @user
 
-        if @user.update_attributes(secure_params)
-            redirect_to users_path, :success => "User Updated"
+        if @user.update(secure_params)
+            redirect_to users_path, :notice => "User Updated"
         else
-            redirect_to users_path, :alert => "Unable to to update user"
+            redirect_to users_path, :notice => "Unable to to update user"
         end
     end
 
-        private
+    private
 
         def secure_params
             params.require(:user).permit(:role)
-        end
+        end    
 
 
 end
